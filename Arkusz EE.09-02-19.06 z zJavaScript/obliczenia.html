@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl3.css"
+</head>
+
+
+<body>
+    <div id="baner-lewy">
+<h1>Stacja paliw</h1>
+    </div>
+    <div id="baner-prawy">
+        <a href="stacja.html">
+            <img src="./home.png">
+        </a>
+        <a href="obliczenia.html">
+            <img src="./znak.png" alt="">
+        </a>
+    
+    </div>
+
+
+
+    <main>
+<h3>Oblicz koszt paliwa</h3>
+<label for="rodzaj_paliwa">Rodzaj paliwa (1 benzyna, 2 olej napedowy)</label> <br>
+<input type="number" name="" id="rodzaj_paliwa"> <br>
+<label for="litry">Ile litrów</label> <br>
+<input type="number" name="" id="litry"> <br>
+<button onclick="oblicz()">Oblicz</button>
+    <p id="wynik"></p> 
+
+
+
+    </main>
+    <div id="blok-lewy">
+        <a href="kwerendy.txt">Pobierz kwerendy</a>
+    </div>
+
+    <div id="blok-prawy">
+        <img src="samochod.png" alt="samochod">
+    </div>
+    <footer>
+        <p>strone opracowal 00000000000</p>
+    </footer>
+
+
+
+    <script>
+function oblicz () {
+    let rodzaj = parseInt(document.getElementById('rodzaj_paliwa').value);
+    let ilosc = parseInt(document.getElementById('litry').value);
+    var koszt = 0;
+    switch (rodzaj) {
+        case 1: 
+        koszt = ilosc * 4;
+        break;
+        case 2: 
+        koszt = ilosc * 3,5;
+        break;
+        default:
+        koszt = 0;
+        break;
+    }
+document.getElementById('wynik').innerHTML =
+            "koszt paliwa: " + koszt + "zł";
+}
+    </script>
+
+
+</body>
+</html>
